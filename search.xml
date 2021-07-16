@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>使用vue cli 手动创建项目</title>
+    <url>/2021/07/13/article-7-13/</url>
+    <content><![CDATA[<ul>
+<li><p>最终项目效果</p>
+</li>
+<li><p><img src="9.png"></p>
+</li>
+<li><p>安装 vuex</p>
+<figure class="highlight ada"><table><tr><td class="code"><pre><code class="hljs ada">npm install vuex <span class="hljs-comment">--save</span><br></code></pre></td></tr></table></figure></li>
+<li><p>选择一个目录创建项目</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">vue</span> create demo<span class="hljs-number">01</span><br></code></pre></td></tr></table></figure></li>
+<li><p>选择Manually select feature</p>
+</li>
+<li><p><img src="1.png"></p>
+</li>
+<li><p>选择图中带*的选项，按空格键选中</p>
+</li>
+<li><p>接下来选择按下图操作</p>
+</li>
+<li><p><img src="2.png"></p>
+</li>
+<li><p><img src="3.png"></p>
+</li>
+<li><p><img src="4.png"></p>
+</li>
+<li><p><img src="5.png"></p>
+</li>
+<li><p><img src="6.png"></p>
+</li>
+<li><p>等待项目创建，若不报错基本就成功了</p>
+</li>
+<li><p><img src="7.png"></p>
+</li>
+<li><p>进入项目目录</p>
+</li>
+<li><p>运行项目，并在浏览器打开相应地址</p>
+</li>
+<li><pre><code>npm run serve
+</code></pre>
+</li>
+<li><p><img src="8.png"></p>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>vue 创建项目</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>利用CSS border进行绘图</title>
+    <url>/2021/07/14/article-7-14/</url>
+    <content><![CDATA[<div align="middle"><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1392908905&auto=1&height=66"></iframe></div>
+
+<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><table>
+<thead>
+<tr>
+<th>border-width</th>
+<th>指定边框的宽度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>border-style</td>
+<td>指定边框的样式</td>
+</tr>
+<tr>
+<td>border-color</td>
+<td>指定边框的颜色</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>我们平常见到的border大概是这样子的</p>
+</li>
+<li><p><img src="1.png"></p>
+</li>
+<li><p>.normal {</p>
+<pre><code>    width: 100px;
+    height: 100px;
+    border: 1px solid red;
+    text-align: center;
+&#125;
+</code></pre>
+</li>
+<li><p>加粗下border看一下</p>
+</li>
+<li><p>.bold {</p>
+<pre><code>    width: 100px;
+    height: 100px;
+    border: 20px solid red;
+    text-align: center;
+&#125;
+</code></pre>
+</li>
+<li><p><img src="2.png"></p>
+</li>
+<li><p>下面给其涂上不同的颜色</p>
+</li>
+<li><p>.difColor {</p>
+<pre><code>    width: 50px;
+    height: 50px;
+    border-style: solid;
+    border-width: 20px 20px 20px 20px;
+    border-color: yellow green blue red;
+&#125;
+</code></pre>
+</li>
+<li><p><img src="3.png"></p>
+</li>
+<li><p>将盒子宽高置为0看一下</p>
+</li>
+<li><p>.contentNull {</p>
+<pre><code>    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 50px;
+    border-color: yellow green blue red;
+&#125;
+</code></pre>
+</li>
+<li><p><img src="4.png"></p>
+</li>
+<li><p>将上边宽度置为0</p>
+</li>
+<li><p>.contentNulla {</p>
+<pre><code>    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 0 50px 50px 50px;
+    border-color: yellow green blue red;
+&#125;
+</code></pre>
+</li>
+<li><p><img src="5.png"></p>
+</li>
+<li><p>在上一步的基础上将左右两边颜色变为透明，我们得到了一个三角形</p>
+</li>
+<li><p>.contentNullb {</p>
+<pre><code>    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 0 50px 50px 50px;
+    border-color: yellow transparent blue transparent;
+&#125;
+</code></pre>
+</li>
+<li><p><img src="6.png"></p>
+</li>
+<li><p>在上一步的基础上将左边边宽置0，又得到了一个三角形，它是上一个三角形的右半部分</p>
+</li>
+<li><p>.contentNullc {</p>
+<pre><code>    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 0 50px 50px 0;
+    border-color: yellow transparent blue transparent;
+&#125;
+</code></pre>
+</li>
+<li><p>加上border-radius会变成什么样子呢</p>
+</li>
+<li><p>.contenta {</p>
+<pre><code>    width: 10px;
+    height: 10px;
+    border-style: solid;
+    border-width: 20px 20px 20px 20px;
+    border-color: yellow green blue red;
+    border-radius: 50%;
+&#125;
+</code></pre>
+</li>
+<li><p><img src="8.png"></p>
+</li>
+<li><p>仅仅将下边颜色置为透明</p>
+</li>
+<li><p>.contentb {</p>
+<pre><code>    width: 50px;
+    height: 50px;
+    border-style: solid;
+    border-width: 20px 20px 20px 20px;
+    border-color: yellow green transparent red;
+&#125;
+</code></pre>
+</li>
+<li><p><img src="9.png"></p>
+</li>
+<li><p>将右下左颜色都置为透明，是不是得到了一个梯形呢</p>
+</li>
+<li><p>.contentc {</p>
+<pre><code>    width: 50px;
+    height: 50px;
+    border-style: solid;
+    border-width: 20px 20px 20px 20px;
+    border-color: yellow transparent transparent transparent;
+&#125;
+</code></pre>
+</li>
+<li><p><img src="10.png"></p>
+</li>
+<li><p>给里面内容添加个颜色</p>
+</li>
+<li><p>.contentd {</p>
+<pre><code>    width: 30px;
+    height: 30px;
+    border-style: solid;
+    border-width: 20px 20px 20px 20px;
+    border-color: yellow transparent transparent transparent;
+&#125;
+</code></pre>
+</li>
+<li><p><img src="11.png"></p>
+</li>
+<li><p>接下来随意画一画</p>
+</li>
+<li><p>.contente {</p>
+<pre><code>    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 30px 40px 50px 60px;
+    border-color: yellow green blue red;
+&#125;
+</code></pre>
+</li>
+<li><p><img src="12.png"></p>
+</li>
+<li><p>.contentf {</p>
+<pre><code>    width: 20px;
+    height: 20px;
+    border-style: solid;
+    border-width: 30px 40px 50px 60px;
+    border-color: yellow green blue red;
+&#125;
+</code></pre>
+</li>
+<li><p><img src="13.png"></p>
+</li>
+<li><p>画个圆</p>
+</li>
+<li><p>.circle {</p>
+<pre><code>    width: 50px;
+    height: 50px;
+    background-color: red;
+    border-radius: 50%;
+&#125;
+</code></pre>
+</li>
+<li><p><img src="14.png"></p>
+</li>
+<li><p>画个椭圆</p>
+</li>
+<li><p>.oval {</p>
+<pre><code>    width: 100px;
+    height: 50px;
+    background-color: red;
+    border-radius: 50%;
+&#125;
+</code></pre>
+</li>
+<li><p><img src="15.png"></p>
+</li>
+</ul>
+<h2 id="组合图形"><a href="#组合图形" class="headerlink" title="组合图形"></a>组合图形</h2><h3 id="平行四边形"><a href="#平行四边形" class="headerlink" title="平行四边形"></a>平行四边形</h3><ul>
+<li>.parallelogram {<pre><code>    position: relative;
+    width: 0;
+    height: 0;
+    border-width: 0 50px 50px;
+    border-style: solid;
+    border-color: transparent transparent red;
+&#125;
+</code></pre>
+​    .parallelogram:after {<br>​        position: absolute;<br>​        top: 0;<br>​        left: 0;<br>​        border-width: 50px 50px 0;<br>​        border-style: solid;<br>​        border-color: red transparent transparent;<br>​        content: “”;<br>​    }</li>
+<li><img src="16.png"></li>
+</ul>
+<h3 id="气泡框"><a href="#气泡框" class="headerlink" title="气泡框"></a>气泡框</h3><ul>
+<li>.bubble {<pre><code>    position: relative;
+    width: 80px;
+    height: 60px;
+    border-radius: 15px;
+    background-color: aqua;
+&#125;
+</code></pre>
+​    .bubble:after {<br>​        position: absolute;<br>​        top: 60px;<br>​        left: 15px;<br>​        width: 0;<br>​        height: 0;<br>​        border-width: 10px 10px 0;<br>​        border-style: solid;<br>​        border-color: aqua transparent transparent;<br>​        content: “”;<br>​    }</li>
+<li><img src="17.png"></li>
+</ul>
+<h3 id="五边形"><a href="#五边形" class="headerlink" title="五边形"></a>五边形</h3><ul>
+<li><p>.pentagon{</p>
+<pre><code>    position: relative;
+    width: 50px;
+    height: 50px;
+    border-width: 40px 20px 0 20px;
+    border-style: solid;
+    border-color: pink transparent transparent;
+&#125;
+.pentagon:after&#123;
+    position: absolute;
+    content: &#39;&#39;;
+    width: 0;
+    height: 0;
+    border-width: 0 45px 30px 45px;
+    top: -70px;
+    border-style: solid;
+    border-color: transparent transparent purple;
+    left: -20px;
+&#125;
+</code></pre>
+</li>
+<li><p><img src="18.png"></p>
+</li>
+<li><p>补充</p>
+<ul>
+<li>top 属性规定元素的顶部边缘。该属性定义了一个定位元素的上外边距边界与其包含块上边界之间的偏移。</li>
+<li>left 属性规定元素的左边缘。该属性定义了定位元素左外边距边界与其包含块左边界之间的偏移。</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>git的简单使用</title>
+    <url>/2021/07/07/git-simple-use/</url>
+    <content><![CDATA[<h2 id="本篇文章介绍如何使用git将本地文件上传到远端"><a href="#本篇文章介绍如何使用git将本地文件上传到远端" class="headerlink" title="本篇文章介绍如何使用git将本地文件上传到远端"></a>本篇文章介绍如何使用git将本地文件上传到远端</h2><h3 id="文章使用github做演示"><a href="#文章使用github做演示" class="headerlink" title="文章使用github做演示"></a>文章使用github做演示</h3><ul>
+<li><p>首先打开一个新的文件夹，在git命令行中打开</p>
+<p><img src="1.png"></p>
+</li>
+<li><p>输入命令git clone “url”,url为你想要上传到文件的位置 </p>
+</li>
+<li><p>在下面可以找到克隆的地址</p>
+<p><img src="2.png"></p>
+</li>
+<li><p>这里我之前配好了ssh，也可以用http进行克隆，但是需要输入密码</p>
+</li>
+<li><p>克隆成功后会发现你的文件夹里多了一个你远程仓库命名的文件夹，进入到这个文件夹里</p>
+<p><img src="3.png"></p>
+</li>
+<li><p>接下来你可以将你需要上传的文件都放到这个文件夹里</p>
+</li>
+<li><p>例如，我需要将一个名为test文件夹里面含有一个test文件，上传上去</p>
+</li>
+<li><p>输入命令git add “filename”</p>
+</li>
+<li><p>git commit -m “提交的备注信息”</p>
+</li>
+<li><p>git push -u origin 分支名，这里我的分支名为main,你的可能为master什么的</p>
+<p><img src="4.png"></p>
+<h3 id="等等，假如你发现上传错文件了怎么办"><a href="#等等，假如你发现上传错文件了怎么办" class="headerlink" title="等等，假如你发现上传错文件了怎么办"></a>等等，假如你发现上传错文件了怎么办</h3></li>
+<li><p>这里仍然需要从你的本地文件与远程一样开始操作，即你已经克隆过远程仓库到本地</p>
+</li>
+<li><p>在命令行输入git rm “filename”</p>
+</li>
+<li><p>输入命令git add “filename”</p>
+</li>
+<li><p>git commit -m “提交的备注信息”</p>
+</li>
+<li><p>git push -u origin 分支名，这里我的分支名为main,你的可能为master什么的</p>
+<p><img src="5.png"></p>
+</li>
+<li><p>然后就好了呀，如果不能成功，那么仔细看下出错信息吧</p>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ul列表的增删改</title>
+    <url>/2021/07/16/article-7-16/</url>
+    <content><![CDATA[<h2 id="增加"><a href="#增加" class="headerlink" title="增加"></a>增加</h2><p>jq代码</p>
+<p><img src="3.png"></p>
+<h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><p>jq代码</p>
+<p><img src="4.png"></p>
+<h2 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h2><p>jq代码</p>
+<p>// 修改指定项元素的值</p>
+<p>​      $(“#modifyItem”).click(function () {</p>
+<p>​        let index = $(“#indexValue”).val();</p>
+<p>​        let value = $(“#itemValue”).val();</p>
+<p>​        $(“li”).eq(index - 1).text(value);</p>
+<p>​      });</p>
+<h2 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h2><p>jq代码</p>
+<p>// 遍历列表所有元素</p>
+<p>​      $(“#traversal”).click(function () {</p>
+<p>​        let j = 0;</p>
+<p>​        let result = [];</p>
+<p>​        for (j; j &lt; $(“li”).length; j++) {</p>
+<p>​          result.push($(“li”).eq(j).text());</p>
+<p>​        }</p>
+<p>​        $(“#result”).text(result);</p>
+<p>​      });</p>
+<p>html 代码</p>
+<p><img src="1.png"></p>
+<p>界面</p>
+<p><img src="2.png"></p>
+]]></content>
+      <tags>
+        <tag>jquery ul</tag>
+      </tags>
+  </entry>
+</search>
