@@ -320,6 +320,39 @@
       </tags>
   </entry>
   <entry>
+    <title>ul列表的增删改</title>
+    <url>/2021/07/16/article-7-16/</url>
+    <content><![CDATA[<h2 id="增加"><a href="#增加" class="headerlink" title="增加"></a>增加</h2><p>jq代码</p>
+<p><img src="3.png"></p>
+<h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><p>jq代码</p>
+<p><img src="4.png"></p>
+<h2 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h2><p>jq代码</p>
+<p>// 修改指定项元素的值</p>
+<p>​      $(“#modifyItem”).click(function () {</p>
+<p>​        let index = $(“#indexValue”).val();</p>
+<p>​        let value = $(“#itemValue”).val();</p>
+<p>​        $(“li”).eq(index - 1).text(value);</p>
+<p>​      });</p>
+<h2 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h2><p>jq代码</p>
+<p>// 遍历列表所有元素</p>
+<p>​      $(“#traversal”).click(function () {</p>
+<p>​        let j = 0;</p>
+<p>​        let result = [];</p>
+<p>​        for (j; j &lt; $(“li”).length; j++) {</p>
+<p>​          result.push($(“li”).eq(j).text());</p>
+<p>​        }</p>
+<p>​        $(“#result”).text(result);</p>
+<p>​      });</p>
+<p>html 代码</p>
+<p><img src="1.png"></p>
+<p>界面</p>
+<p><img src="2.png"></p>
+]]></content>
+      <tags>
+        <tag>jquery ul</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>git的简单使用</title>
     <url>/2021/07/07/git-simple-use/</url>
     <content><![CDATA[<h2 id="本篇文章介绍如何使用git将本地文件上传到远端"><a href="#本篇文章介绍如何使用git将本地文件上传到远端" class="headerlink" title="本篇文章介绍如何使用git将本地文件上传到远端"></a>本篇文章介绍如何使用git将本地文件上传到远端</h2><h3 id="文章使用github做演示"><a href="#文章使用github做演示" class="headerlink" title="文章使用github做演示"></a>文章使用github做演示</h3><ul>
@@ -364,39 +397,6 @@
 ]]></content>
       <tags>
         <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ul列表的增删改</title>
-    <url>/2021/07/16/article-7-16/</url>
-    <content><![CDATA[<h2 id="增加"><a href="#增加" class="headerlink" title="增加"></a>增加</h2><p>jq代码</p>
-<p><img src="3.png"></p>
-<h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><p>jq代码</p>
-<p><img src="4.png"></p>
-<h2 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h2><p>jq代码</p>
-<p>// 修改指定项元素的值</p>
-<p>​      $(“#modifyItem”).click(function () {</p>
-<p>​        let index = $(“#indexValue”).val();</p>
-<p>​        let value = $(“#itemValue”).val();</p>
-<p>​        $(“li”).eq(index - 1).text(value);</p>
-<p>​      });</p>
-<h2 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h2><p>jq代码</p>
-<p>// 遍历列表所有元素</p>
-<p>​      $(“#traversal”).click(function () {</p>
-<p>​        let j = 0;</p>
-<p>​        let result = [];</p>
-<p>​        for (j; j &lt; $(“li”).length; j++) {</p>
-<p>​          result.push($(“li”).eq(j).text());</p>
-<p>​        }</p>
-<p>​        $(“#result”).text(result);</p>
-<p>​      });</p>
-<p>html 代码</p>
-<p><img src="1.png"></p>
-<p>界面</p>
-<p><img src="2.png"></p>
-]]></content>
-      <tags>
-        <tag>jquery ul</tag>
       </tags>
   </entry>
 </search>
